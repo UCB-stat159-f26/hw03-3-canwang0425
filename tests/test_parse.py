@@ -13,6 +13,7 @@ MALE_stat = '''var morematchmx = [["20010910", "Spain F10", "Hard", "S", "L", ""
 def run_parse(text):
     return oppo_age_insert(build_match_df(find_all_matches(text)))
 
+#test if function can output opponent's name and age 
 def test_parsed_female():
     table = run_parse(FEMALE_stat)
     assert len(table) == 3
