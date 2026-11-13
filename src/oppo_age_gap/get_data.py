@@ -14,3 +14,8 @@ def get_player_for_url(name):
 def name_shown(url_name):
     return re.sub(r"(?<!^)(?=[A-Z])", " ", url_name)
 
+def download_abstract_file(url_name):
+    res = requests.get(ABSTRACT_URL.format(url_name), headers=HEADERS,timeout = 10)
+    if res.status_code == 200 and  "[[" in res.text:
+        return res.text
+    raise ValueError(f"Having issues to download file for {url_name}. Status code: {res.status_code}")
