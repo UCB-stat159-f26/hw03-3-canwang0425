@@ -16,17 +16,19 @@ def run_parse(text):
 def test_parsed_female():
     table = run_parse(FEMALE_stat)
     assert len(table) == 3
-    assert table['oponent'].iloc[0] == "Anne Miller"
+    assert table['opponent'].iloc[0] == "Anne Miller"
     assert table['oppo_age'].iloc[0] == pytest.approx(18.77,abs=0.01)
 
 
 def test_parsed_male():
     table = run_parse(MALE_stat)
     assert len(table) == 3
-    assert table['oponent'].iloc[0] == "Guillermo Platel"
+    assert table['opponent'].iloc[0] == "Guillermo Platel"
     assert table['oppo_age'].iloc[0] == pytest.approx(22.264202601)
 
+
+#Anne and Serena's age differences
 def test_age_diff():
-    table = player_age_insert(run_parse(FEMALE_stat), "19770119")
+    table = player_age_insert(run_parse(FEMALE_stat), "19810926")
     assert table['player_age'].iloc[0] == pytest.approx(14.09, abs=0.01)
     assert table['age_diff'].iloc[0] == pytest.approx(14.09-18.78,abs =0.02)
