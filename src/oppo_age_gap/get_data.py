@@ -20,10 +20,12 @@ def download_abstract_file(url_name):
         return res.text
     raise ValueError(f"Having issues to download file for {url_name}. Status code: {res.status_code}")
 
+#extract player's birthday
 def find_player_bday(text):
     single_match =  re.search(r"var dob\s*=\s*(\d{8})", text)
     return single_match.group(1) if single_match else None
 
+#use extract function to find birthday from gender page
 def find_bday_from_gender_page(url_name): 
     for i in PLAYER_URLS:
         res = requests.get(i.format(url_name), headers=HEADERS,timeout = 10)
