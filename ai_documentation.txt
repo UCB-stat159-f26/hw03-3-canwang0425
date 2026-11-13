@@ -1,2 +1,3 @@
 For this homework, Claude Sonnet 5.5 was used to assist in the following sections:
 1. In the file .gitignore, AI was used to determine which files and folders to exclude from version control. Prompt: “What should I put in my .gitignore for a Python package?” AI guided to show which folders and files to include. 
+In the file pyproject.toml, AI was used to determine what each section of the package configuration file should have. Prompt: “What should I put in each part of pyproject.toml if I want to use a python package?" The AI provided all the syntax and sections to put in it, including their purposes. 
